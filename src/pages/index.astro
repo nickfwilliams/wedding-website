@@ -1,8 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.scss';
-import '../styles/reset.css';
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<Layout />
-
+<MainLayout title="Nick & Montana's Wedding | Home">
+  <section>
+    <div class="event-welcome"><h1>Nick & Montana <span class="sub-text">are getting married and...</span><span class="invitation-text">You're invited!</span></h1>
+    <img class="nick-monty-gif" src="/src/assets/images/nick-monty-animation.gif" alt="A basic stop-frame animation of Nick and Monty in the Pub"></div>
+    <div class="event-details"><p class="date">Saturday, August 8th 2026</p>
+    <p class="location"><a href="#">Goss Croft Hall</a>, Upper Seagry, Chippenham</p>
+    <p class="rsvp">Please <a href="#">RSVP</a> by May 8th 2026</p></div>
+  </section>
+</MainLayout>

@@ -1,37 +1,152 @@
+:root {
+  --forest-green: #2d712f;
+  --sunset-orange: #E1530B;
+  --sunshine-yellow: #F3AE07;
+  --farmyard-brown: #5B3B23;
+  --wheat-field: #f8dab0;
+  --rounded-block-font: 'Caprasimo', serif;
+  --handwriting-font: 'Caveat', sans-serif;
+
+}
+
 body {
-  background-color: #f8dab0;
-  font-family: 'Open Sans', sans-serif;
+  background-color: var(--wheat-field);
+  background-image: url('/src/assets/images/paper-background.webp'), url('/src/assets/images/flower-corner.png');
+  background-position: top left, 30px 30px;
+  background-repeat: repeat, no-repeat;
+  font-family: var(--handwriting-font), sans-serif;
+
+  nav {
+    padding: 2rem;
+    color: var(--sunset-orange);
+
+    ul {
+      font-family: var(--rounded-block-font), serif;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+
+      li {
+        list-style-type: none;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  // End of nav
 
   main {
-    max-width: 75ch;
-    margin-inline: auto;
-
-    img.couple {
-      max-width: 450px;
-      margin-inline: auto;
-      margin-block: 2rem;
+    section {
+      text-align: center;
+      margin-block-end: 6rem;
     }
 
     h1,
     h2 {
-      color: #246722;
-      text-align: center;
-      font-family: 'Cooper', serif;
+      color: var(--forest-green);
+      // text-align: center;
+      font-family: 'Caprasimo', serif;
       text-transform: uppercase;
     }
 
     h1 {
       font-size: 4rem;
       line-height: 4rem;
+      color: var(--farmyard-brown);
 
-      span {
+      span.sub-text {
         display: block;
-        font-size: 3rem;
+        font-size: 2.25rem;
+      }
+
+      span.invitation-text {
+        display: block;
+        font-size: 4rem;
+        color: var(--forest-green);
+
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 60px;
+          height: 60px;
+
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        &::before {
+          background-image: url("/src/assets/images/firework-left.png");
+          margin-inline-end: 1rem;
+        }
+
+        &::after {
+          background-image: url("/src/assets/images/firework-right.png");
+          margin-inline-start: 1rem;
+        }
       }
     }
 
     h2 {
       font-size: 2rem;
     }
+
+    .nick-monty-gif {
+      max-width: 525px;
+      margin-inline: auto;
+      margin-block: 3rem;
+      border-radius: 10px;
+    }
+
+    .event-details {
+      font-family: var(--handwriting-font), sans-serif;
+      font-size: 2.25rem;
+      line-height: 1.25rem;
+
+      .date {
+        font-weight: 800;
+        color: var(--forest-green);
+      }
+
+      a {
+        font-weight: 800;
+        color: var(--sunset-orange);
+        text-underline-offset: 6px;
+      }
+
+    }
+
   }
+
+  // End of main
+
+  footer {
+    position: relative;
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: var(--forest-green);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: url("/src/assets/images/footer-edging-halved.png") repeat-x;
+    }
+
+    img.flower-bar {
+      margin-inline: auto;
+      margin-block-end: 1rem;
+    }
+
+    a {
+      color: var(--wheat-field);
+      font-size: 1.75rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+
 }
