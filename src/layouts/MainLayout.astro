@@ -20,8 +20,12 @@ import Footer from "../components/footer.astro";
   <body>
     <Header />    
     <main>
+      <img class="hills" src="/src/assets/images/hills.png">
+      <img class="bush" src="/src/assets/images/bush.png">
       <slot />
     </main>
     <Footer />
+    <script src="/src/scripts/reveal.js" is:inline></script>
+
   </body>
 </html>

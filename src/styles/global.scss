@@ -10,10 +10,13 @@
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   background-color: var(--wheat-field);
   background-image: url('/src/assets/images/paper-background.webp'), url('/src/assets/images/flower-corner.png');
-  background-position: top left, 30px 30px;
+  background-position: top left, 30px 30px, right 30px center;
   background-repeat: repeat, no-repeat;
+
   font-family: var(--handwriting-font), sans-serif;
 
   nav {
@@ -37,20 +40,52 @@ body {
   // End of nav
 
   main {
+    position: relative;
+
     section {
-      text-align: center;
+      text-align: start;
+      max-width: 850px;
+      margin-inline: auto;
       margin-block-end: 6rem;
     }
 
-    h1,
-    h2 {
-      color: var(--forest-green);
-      // text-align: center;
-      font-family: 'Caprasimo', serif;
-      text-transform: uppercase;
+    header {
+      text-align: center;
+    }
+
+    img {
+      border-radius: 7px;
     }
 
     h1 {
+      color: var(--forest-green);
+      font-family: 'Caprasimo', serif;
+      text-transform: uppercase;
+      font-size: 3rem;
+      text-align: center;
+
+      &::before:not(.invite),
+      &::after:not(.invite) {
+        content: "";
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &::before {
+        background-image: url("/src/assets/images/main-flower-yellow.png");
+        margin-inline-end: 1rem;
+      }
+
+      &::after {
+        background-image: url("/src/assets/images/main-flower-orange.png");
+        margin-inline-start: 1rem;
+      }
+    }
+
+    h1.invite {
       font-size: 4rem;
       line-height: 4rem;
       color: var(--farmyard-brown);
@@ -71,7 +106,6 @@ body {
           display: inline-block;
           width: 60px;
           height: 60px;
-
           background-size: contain;
           background-repeat: no-repeat;
         }
@@ -89,8 +123,20 @@ body {
     }
 
     h2 {
+      font-family: var(--handwriting-font);
+      font-size: 2rem;
+      margin-block-start: 0.25rem;
+      margin-block-end: 3rem;
+    }
+
+    h3 {
+      font-family: var(--rounded-block-font);
+      color: var(--forest-green);
+      text-transform: uppercase;
       font-size: 2rem;
     }
+
+    // Home specific styles
 
     .nick-monty-gif {
       max-width: 525px;
@@ -101,6 +147,7 @@ body {
 
     .event-details {
       font-family: var(--handwriting-font), sans-serif;
+      text-align: center;
       font-size: 2.25rem;
       line-height: 1.25rem;
 
@@ -109,17 +156,141 @@ body {
         color: var(--forest-green);
       }
 
+      .rsvp {
+        font-weight: 800;
+      }
+
       a {
         font-weight: 800;
         color: var(--sunset-orange);
         text-underline-offset: 6px;
       }
+    }
 
+    p {
+      font-size: 1.75rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: 1.75rem;
+        position: relative;
+        padding-inline-start: 30px;
+      }
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.4em;
+      width: 20px;
+      height: 20px;
+      background: url('/src/assets/images/main-flower-orange.png') no-repeat center;
+      background-size: contain;
+    }
+
+    .hills,
+    .bush {
+      position: absolute;
+      z-index: -2;
+      opacity: 30%;
+      max-width: 250px;
+    }
+
+    .hills {
+      bottom: -40px;
+      left: 80px;
+    }
+
+    .bush {
+      bottom: -20px;
+      right: 80px;
     }
 
   }
 
   // End of main
+
+  // Schedule
+
+  .schedule {
+    columns: 2;
+
+    .schedule_item {
+      text-align: center;
+      margin-block-end: 1rem;
+
+      p {
+        margin: 0;
+      }
+
+      .schedule_time {
+        color: var(--sunset-orange);
+        font-family: var(--rounded-block-font);
+      }
+
+      img {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  // End of Schedule
+
+  // What to wear
+
+  .image-wrapper {
+    position: relative;
+
+    .surprise-text {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      position: absolute;
+      bottom: 0;
+      right: -1rem;
+      color: white;
+      background-color: var(--sunset-orange);
+      padding-inline: 2rem 3rem;
+      font-size: 3rem;
+      margin: 0;
+      transform: rotate(5deg);
+    }
+
+    #surprise-text.visible {
+      opacity: 1;
+    }
+  }
+
+  .inspo-gallery {
+    display: grid;
+    row-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    margin-block: 2rem;
+
+    .wrestler {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      transform: rotate(-7.8deg);
+    }
+
+    .truck {
+      transform: rotate(1.5deg);
+    }
+
+    .band {
+      transform: rotate(4.3deg);
+    }
+  }
+
+  // Accommodation & Travel
+
+
 
   footer {
     position: relative;
