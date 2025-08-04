@@ -6,7 +6,6 @@
   --wheat-field: #f8dab0;
   --rounded-block-font: 'Caprasimo', serif;
   --handwriting-font: 'Caveat', sans-serif;
-
 }
 
 body {
@@ -16,8 +15,9 @@ body {
   background-image: url('/src/assets/images/paper-background.webp'), url('/src/assets/images/flower-corner.png');
   background-position: top left, 30px 30px, right 30px center;
   background-repeat: repeat, no-repeat;
-
   font-family: var(--handwriting-font), sans-serif;
+
+  // Navigation
 
   nav {
     padding: 2rem;
@@ -28,6 +28,7 @@ body {
       text-transform: uppercase;
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
       gap: 2rem;
 
       li {
@@ -37,7 +38,18 @@ body {
     }
   }
 
-  // End of nav
+  @media screen and (width < 500px) {
+    nav {
+      padding-block: 4rem 0rem;
+
+      ul li {
+        text-align: end;
+      }
+    }
+
+  }
+
+  // End of navigation
 
   main {
     position: relative;
@@ -47,6 +59,7 @@ body {
       max-width: 850px;
       margin-inline: auto;
       margin-block-end: 6rem;
+      padding-inline: 1rem;
     }
 
     header {
@@ -63,6 +76,7 @@ body {
       text-transform: uppercase;
       font-size: 3rem;
       text-align: center;
+      font-weight: 400;
 
       &::before:not(.invite),
       &::after:not(.invite) {
@@ -82,6 +96,14 @@ body {
       &::after {
         background-image: url("/src/assets/images/main-flower-orange.png");
         margin-inline-start: 1rem;
+      }
+
+    }
+
+    // Resize font for mobile
+    @media screen and (width < 500px) {
+      h1 {
+        font-size: 2.25rem;
       }
     }
 
@@ -122,9 +144,14 @@ body {
       }
     }
 
+    h2,
+    h3 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
     h2 {
       font-family: var(--handwriting-font);
-      font-size: 2rem;
       margin-block-start: 0.25rem;
       margin-block-end: 3rem;
     }
@@ -133,13 +160,41 @@ body {
       font-family: var(--rounded-block-font);
       color: var(--forest-green);
       text-transform: uppercase;
-      font-size: 2rem;
+    }
+
+    // Resize fonts for mobile
+    @media screen and (width < 500px) {
+
+      h1.invite {
+        font-size: 3.5rem;
+        margin-block-start: 1rem;
+
+        span.sub-text {
+          font-size: 2rem;
+          line-height: 2.5rem;
+          padding-block: 1rem;
+        }
+
+        span.invitation-text {
+          font-size: 3.5rem;
+
+          &::before,
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      h2,
+      h3 {
+        font-size: 1.75rem;
+      }
     }
 
     // Home specific styles
 
     .nick-monty-gif {
-      max-width: 525px;
+      max-width: 80%;
       margin-inline: auto;
       margin-block: 3rem;
       border-radius: 10px;
@@ -164,6 +219,12 @@ body {
         font-weight: 800;
         color: var(--sunset-orange);
         text-underline-offset: 6px;
+      }
+    }
+
+    @media screen and (width < 500px) {
+      .event-details {
+        line-height: 2rem;
       }
     }
 
@@ -197,7 +258,7 @@ body {
     .bush {
       position: absolute;
       z-index: -2;
-      opacity: 30%;
+      opacity: 40%;
       max-width: 250px;
     }
 
@@ -209,6 +270,17 @@ body {
     .bush {
       bottom: -20px;
       right: 80px;
+    }
+
+    // Hide bush on mobile
+    @media screen and (width < 500px) {
+      .hills {
+        opacity: 20%;
+      }
+
+      .bush {
+        display: none;
+      }
     }
 
   }
@@ -254,7 +326,7 @@ body {
       right: -1rem;
       color: white;
       background-color: var(--sunset-orange);
-      padding-inline: 2rem 3rem;
+      padding-inline: 2rem;
       font-size: 3rem;
       margin: 0;
       transform: rotate(5deg);
@@ -262,6 +334,13 @@ body {
 
     #surprise-text.visible {
       opacity: 1;
+    }
+
+    @media screen and (width < 500px) {
+      .surprise-text {
+        font-size: 2rem;
+        padding-inline: 1rem;
+      }
     }
   }
 
@@ -288,9 +367,12 @@ body {
     }
   }
 
-  // Accommodation & Travel
+  // FAQs
 
-
+  .faq-flower {
+    margin-block: 2rem 2.5rem;
+    margin-inline: auto;
+  }
 
   footer {
     position: relative;
@@ -320,4 +402,11 @@ body {
     }
   }
 
+}
+
+// Resize font for mobile
+@media screen and (width < 500px) {
+  body {
+    background-size: 200px;
+  }
 }
