@@ -311,6 +311,19 @@ body {
     }
   }
 
+  @media screen and (width < 500px) {
+    .schedule {
+      display: flex;
+      gap: 2rem;
+
+      .column-one,
+      .column-two {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
   // End of Schedule
 
   // What to wear
