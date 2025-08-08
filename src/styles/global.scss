@@ -258,7 +258,7 @@ body {
     .bush {
       position: absolute;
       z-index: -2;
-      opacity: 40%;
+      opacity: 20%;
       max-width: 250px;
     }
 
@@ -273,7 +273,7 @@ body {
     }
 
     // Hide bush on mobile
-    @media screen and (width < 500px) {
+    @media screen and (width < 768px) {
       .hills {
         opacity: 20%;
       }
@@ -405,8 +405,18 @@ body {
 }
 
 // Resize font for mobile
-@media screen and (width < 500px) {
+@media screen and (width < 1280px) {
   body {
-    background-size: 200px;
+    background-image: url('/src/assets/images/paper-background.webp'), none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('/src/assets/images/flower-corner.png') top 30px left 30px no-repeat;
+      opacity: 0.1;
+      pointer-events: none;
+
+    }
   }
 }
