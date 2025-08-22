@@ -20,12 +20,9 @@ body {
   // Navigation
 
   nav {
-    padding: 2rem;
-    color: var(--sunset-orange);
 
     ul {
-      font-family: var(--rounded-block-font), serif;
-      text-transform: uppercase;
+
       display: flex;
       justify-content: flex-end;
       flex-wrap: wrap;
@@ -34,6 +31,13 @@ body {
       li {
         list-style-type: none;
         font-size: 1.2rem;
+
+        a {
+          padding: 2rem;
+          color: var(--sunset-orange);
+          font-family: var(--rounded-block-font), serif;
+          text-transform: uppercase;
+        }
       }
     }
   }
