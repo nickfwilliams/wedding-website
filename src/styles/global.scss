@@ -289,7 +289,7 @@ body {
 
     .schedule_item {
       text-align: center;
-      margin-block-end: 2rem;
+      margin-block-end: 1.5rem;
 
       p {
         margin: 0;
@@ -303,6 +303,12 @@ body {
       img {
         margin-inline: auto;
       }
+    }
+  }
+
+  @media screen and (width < 500px) {
+    .schedule {
+      columns: 1;
     }
   }
 
