@@ -63,6 +63,12 @@ body {
       margin-inline: auto;
       margin-block-end: 6rem;
       padding-inline: 1rem;
+
+
+      a {
+        color: var(--sunset-orange)
+      }
+
     }
 
     header {
@@ -305,12 +311,12 @@ body {
       position: absolute;
       bottom: 0;
       right: -1rem;
-      color: white;
       background-color: var(--sunset-orange);
       padding-inline: 2rem;
       font-size: 3rem;
       margin: 0;
       transform: rotate(5deg);
+      border-radius: 5px;
     }
 
     #surprise-text.visible {
@@ -381,6 +387,25 @@ body {
       color: var(--wheat-field);
       font-size: 1.75rem;
       letter-spacing: 0.1rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      border: none;
+      border-radius: 50px;
+      background-color: var(--wheat-field);
+      color: var(--farmyard-brown);
+      cursor: pointer;
+      box-shadow: 4px 4px var(--farmyard-brown);
+      box-shadow: 6px 6px var(--farmyard-brown);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+
+      &:active {
+        box-shadow: var(--farmyard-brown);
+        transform: translateY(2px);
+      }
     }
   }
 
