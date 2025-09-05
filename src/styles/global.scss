@@ -84,7 +84,6 @@ body {
       color: var(--forest-green);
       font-family: 'Caprasimo', serif;
       text-transform: uppercase;
-      font-size: 3rem;
       text-align: center;
       font-weight: 400;
 
@@ -200,6 +199,15 @@ body {
 
       .rsvp {
         font-weight: 800;
+        margin-block-start: 4rem;
+
+        a {
+          background-color: var(--sunset-orange);
+          color: var(--wheat-field);
+          padding: 0.5rem 2rem;
+          border-radius: 50px;
+          text-decoration: none;
+        }
       }
 
       a {
@@ -281,7 +289,7 @@ body {
 
     .schedule_item {
       text-align: center;
-      margin-block-end: 1rem;
+      margin-block-end: 2rem;
 
       p {
         margin: 0;
@@ -397,10 +405,8 @@ body {
       background-color: var(--wheat-field);
       color: var(--farmyard-brown);
       cursor: pointer;
-      box-shadow: 4px 4px var(--farmyard-brown);
       box-shadow: 6px 6px var(--farmyard-brown);
       transition: box-shadow 0.2s ease, transform 0.2s ease;
-
 
       &:active {
         box-shadow: var(--farmyard-brown);
