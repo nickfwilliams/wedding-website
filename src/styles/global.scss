@@ -29,6 +29,7 @@ body {
       padding: 2rem;
 
       li {
+        display: block;
         list-style-type: none;
         font-size: 1.2rem;
 
@@ -45,9 +46,15 @@ body {
     nav {
       padding-block: 4rem 0rem;
 
-      ul li {
-        text-align: end;
+      ul {
+        display: grid;
+
+        li {
+          text-align: end;
+        }
       }
+
+
     }
 
   }
@@ -285,11 +292,10 @@ body {
   // Schedule
 
   .schedule {
-    columns: 2;
 
     .schedule_item {
       text-align: center;
-      margin-block-end: 1.5rem;
+      margin-block-end: 2rem;
 
       p {
         margin: 0;
@@ -302,6 +308,7 @@ body {
 
       img {
         margin-inline: auto;
+        margin-block: 1.75rem 1rem;
       }
     }
   }
@@ -395,6 +402,12 @@ body {
       margin-inline: auto;
       display: block;
       margin-block-end: 1rem;
+    }
+
+    p {
+      color: var(--wheat-field);
+      font-size: 2rem;
+      margin-block: 1rem;
     }
 
     a {
