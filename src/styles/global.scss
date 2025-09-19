@@ -44,10 +44,13 @@ body {
 
   @media screen and (width < 500px) {
     nav {
-      padding-block: 4rem 0rem;
+      padding-block: 2rem 0rem;
 
       ul {
         display: grid;
+        gap: 1.5rem;
+        padding-block: 2rem 1rem;
+        ;
 
         li {
           text-align: end;
