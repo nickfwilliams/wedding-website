@@ -12,39 +12,53 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-color: var(--wheat-field);
-  background-image: url('/src/assets/images/paper-background.webp'), url('/src/assets/images/flower-corner.png');
+  background-image: url('/images/paper-background.webp'), url('/images/flower-corner.png');
   background-position: top left, 30px 30px, right 30px center;
-  background-repeat: repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100%, auto;
   font-family: var(--handwriting-font), sans-serif;
 
   // Navigation
 
   nav {
-    padding: 2rem;
-    color: var(--sunset-orange);
 
     ul {
-      font-family: var(--rounded-block-font), serif;
-      text-transform: uppercase;
       display: flex;
       justify-content: flex-end;
       flex-wrap: wrap;
       gap: 2rem;
+      padding: 2rem;
 
       li {
+        display: block;
         list-style-type: none;
         font-size: 1.2rem;
+
+        a {
+          color: var(--sunset-orange);
+          font-family: var(--rounded-block-font), serif;
+          text-transform: uppercase;
+        }
       }
     }
   }
 
   @media screen and (width < 500px) {
     nav {
-      padding-block: 4rem 0rem;
+      padding-block: 2rem 0rem;
 
-      ul li {
-        text-align: end;
+      ul {
+        display: grid;
+        gap: 1.5rem;
+        padding-block: 2rem 1rem;
+        ;
+
+        li {
+          text-align: end;
+        }
       }
+
+
     }
 
   }
@@ -60,6 +74,12 @@ body {
       margin-inline: auto;
       margin-block-end: 6rem;
       padding-inline: 1rem;
+
+
+      a {
+        color: var(--sunset-orange)
+      }
+
     }
 
     header {
@@ -71,10 +91,10 @@ body {
     }
 
     h1 {
+      font-size: clamp(1.5rem, 5vw + 1rem, 3rem);
       color: var(--forest-green);
       font-family: 'Caprasimo', serif;
       text-transform: uppercase;
-      font-size: 3rem;
       text-align: center;
       font-weight: 400;
 
@@ -89,32 +109,25 @@ body {
       }
 
       &::before {
-        background-image: url("/src/assets/images/main-flower-yellow.png");
+        background-image: url("/images/main-flower-yellow.png");
         margin-inline-end: 1rem;
       }
 
       &::after {
-        background-image: url("/src/assets/images/main-flower-orange.png");
+        background-image: url("/images/main-flower-orange.png");
         margin-inline-start: 1rem;
       }
 
     }
 
-    // Resize font for mobile
-    @media screen and (width < 500px) {
-      h1 {
-        font-size: 2.25rem;
-      }
-    }
 
     h1.invite {
-      font-size: 4rem;
-      line-height: 4rem;
       color: var(--farmyard-brown);
 
       span.sub-text {
         display: block;
         font-size: 2.25rem;
+        margin-block: 0.25rem 1rem;
       }
 
       span.invitation-text {
@@ -133,50 +146,38 @@ body {
         }
 
         &::before {
-          background-image: url("/src/assets/images/firework-left.png");
+          background-image: url("/images/firework-left.png");
           margin-inline-end: 1rem;
         }
 
         &::after {
-          background-image: url("/src/assets/images/firework-right.png");
+          background-image: url("/images/firework-right.png");
           margin-inline-start: 1rem;
         }
       }
     }
 
-    h2,
-    h3 {
-      font-size: 2rem;
-      font-weight: 400;
-    }
-
     h2 {
+      font-size: clamp(1.25rem, 4vw + 0.5rem, 2.5rem);
       font-family: var(--handwriting-font);
       margin-block-start: 0.25rem;
       margin-block-end: 3rem;
     }
 
     h3 {
+      font-size: clamp(1rem, 3vw + 0.5rem, 2rem);
       font-family: var(--rounded-block-font);
       color: var(--forest-green);
       text-transform: uppercase;
     }
 
     // Resize fonts for mobile
-    @media screen and (width < 500px) {
+    @media screen and (width < 790px) {
 
       h1.invite {
-        font-size: 3.5rem;
         margin-block-start: 1rem;
 
-        span.sub-text {
-          font-size: 2rem;
-          line-height: 2.5rem;
-          padding-block: 1rem;
-        }
-
         span.invitation-text {
-          font-size: 3.5rem;
 
           &::before,
           &::after {
@@ -184,17 +185,13 @@ body {
           }
         }
       }
-
-      h2,
-      h3 {
-        font-size: 1.75rem;
-      }
     }
 
     // Home specific styles
 
     .nick-monty-gif {
       max-width: 80%;
+      display: block;
       margin-inline: auto;
       margin-block: 3rem;
       border-radius: 10px;
@@ -213,6 +210,15 @@ body {
 
       .rsvp {
         font-weight: 800;
+        margin-block-start: 4rem;
+
+        a {
+          background-color: var(--sunset-orange);
+          color: var(--wheat-field);
+          padding: 0.5rem 2rem;
+          border-radius: 50px;
+          text-decoration: none;
+        }
       }
 
       a {
@@ -250,7 +256,7 @@ body {
       top: 0.4em;
       width: 20px;
       height: 20px;
-      background: url('/src/assets/images/main-flower-orange.png') no-repeat center;
+      background: url('/images/main-flower-orange.png') no-repeat center;
       background-size: contain;
     }
 
@@ -258,7 +264,7 @@ body {
     .bush {
       position: absolute;
       z-index: -2;
-      opacity: 40%;
+      opacity: 20%;
       max-width: 250px;
     }
 
@@ -273,7 +279,7 @@ body {
     }
 
     // Hide bush on mobile
-    @media screen and (width < 500px) {
+    @media screen and (width < 768px) {
       .hills {
         opacity: 20%;
       }
@@ -290,11 +296,10 @@ body {
   // Schedule
 
   .schedule {
-    columns: 2;
 
     .schedule_item {
       text-align: center;
-      margin-block-end: 1rem;
+      margin-block-end: 2rem;
 
       p {
         margin: 0;
@@ -307,20 +312,14 @@ body {
 
       img {
         margin-inline: auto;
+        margin-block: 1.75rem 1rem;
       }
     }
   }
 
   @media screen and (width < 500px) {
     .schedule {
-      display: flex;
-      gap: 2rem;
-
-      .column-one,
-      .column-two {
-        display: flex;
-        flex-direction: column;
-      }
+      columns: 1;
     }
   }
 
@@ -337,12 +336,12 @@ body {
       position: absolute;
       bottom: 0;
       right: -1rem;
-      color: white;
       background-color: var(--sunset-orange);
       padding-inline: 2rem;
       font-size: 3rem;
       margin: 0;
       transform: rotate(5deg);
+      border-radius: 5px;
     }
 
     #surprise-text.visible {
@@ -380,6 +379,12 @@ body {
     }
   }
 
+  // Accommodation
+
+  h3:nth-of-type(2) {
+    margin-block-start: 3rem;
+  }
+
   // FAQs
 
   .faq-flower {
@@ -400,12 +405,19 @@ body {
       left: 0;
       width: 100%;
       height: 40px;
-      background: url("/src/assets/images/footer-edging-halved.png") repeat-x;
+      background: url("/images/footer-edging-halved.png") repeat-x;
     }
 
     img.flower-bar {
       margin-inline: auto;
+      display: block;
       margin-block-end: 1rem;
+    }
+
+    p {
+      color: var(--wheat-field);
+      font-size: 2rem;
+      margin-block: 1rem;
     }
 
     a {
@@ -413,13 +425,41 @@ body {
       font-size: 1.75rem;
       letter-spacing: 0.1rem;
     }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      border: none;
+      border-radius: 50px;
+      background-color: var(--wheat-field);
+      color: var(--farmyard-brown);
+      cursor: pointer;
+      box-shadow: 6px 6px var(--farmyard-brown);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+      &:active {
+        box-shadow: var(--farmyard-brown);
+        transform: translateY(2px);
+      }
+    }
   }
 
 }
 
 // Resize font for mobile
-@media screen and (width < 500px) {
+@media screen and (width < 1280px) {
   body {
-    background-size: 200px;
+    background-image: url('/images/paper-background.webp'), none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('/images/flower-corner.png') top 30px left 30px no-repeat;
+      opacity: 0.1;
+      pointer-events: none;
+      background-size: 300px;
+
+    }
   }
 }
