@@ -385,12 +385,63 @@ body {
     margin-block-start: 3rem;
   }
 
+  // Gifts
+
+  .gift-gallery {
+    margin-block-start: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    &_tile {
+      max-inline-size: 350px;
+      padding: 3rem 2rem;
+      border-radius: 15px;
+      background-color: rgba(255 255 255 / .2);
+
+      h3 {
+        margin: 0;
+      }
+
+      p {
+        font-size: 25px;
+        margin-block-end: 2rem;
+      }
+
+      img {
+        margin-block-start: 1rem;
+      }
+
+      a {
+        margin-block-start: 2rem;
+        font-size: 25px;
+        background-color: var(--sunset-orange);
+        color: var(--wheat-field);
+        padding: 0.5rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media screen and (width < 780px) {
+    .gift-gallery_tile {
+      max-width: 100%;
+    }
+  }
+
+  // End of gifts
+
   // FAQs
 
   .faq-flower {
     margin-block: 2rem 2.5rem;
     margin-inline: auto;
   }
+
+  // End of FAQs
+
+
 
   footer {
     position: relative;
